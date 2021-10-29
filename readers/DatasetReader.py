@@ -6,10 +6,6 @@ from typing import List
 
 dataset_dir = 'data/'
 target_dir = 'data/trainingSet'
-QuAD_path_train = 'train-v2.0.json'
-QuAD_path_dev = 'dev-v2.0.json'
-CoQA_path_train = 'coqa-train-v1.0.json'
-CoQA_path_dev = 'coqa-dev-v1.0.json'
 
 
 def read_quad(filename: str) -> pd.DataFrame:
@@ -49,7 +45,7 @@ def read_coqa(filename: str) -> pd.DataFrame:
 
 
 def write_csv(coqa_df: pd.DataFrame, quad_df: pd.DataFrame, filename: str):
-    result = pd.concat([coqa_df, quad_df], axis=0).to_frame()
+    result = pd.concat([coqa_df, quad_df], axis=0)
     output = os.path.join(target_dir, filename)
     result.to_csv(output, encoding="utf-8")  # noqa
 
