@@ -1,0 +1,4 @@
+outs:
+- md5: 161aabbd45d5ce2b8f41440643decda6
+  size: 891655743
+  path: tmp_model.pth
